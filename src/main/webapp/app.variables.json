@@ -1602,5 +1602,13 @@
 			"fullyQualifiedName": "com.hrdb.Vacation",
 			"tableType": "TABLE"
 		}
+	},
+	"goToPage_Page": {
+		"owner": "App",
+		"operation": "gotoPage",
+		"pageName": "Page",
+		"dataBinding": {},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToPage_Page-wm.NavigationVariable-1446107137377"
 	}
 }

@@ -43,8 +43,11 @@ var _MainPage_Variables_ ={}
 </script>
 <script id="Main.html" type="text/ng-template">
 <wm-page name="page1" data-ng-controller="MainPageController">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
     <wm-content name="content1">
-        <wm-page-content name="page_content1" columnwidth="12">
+        <wm-left-panel content="leftnav" columnwidth="2" name="left_panel1"></wm-left-panel>
+        <wm-page-content name="page_content1" columnwidth="8">
             <wm-livegrid service="hrdb@Department" name="DepartmentLivegrid1">
                 <wm-grid dataset="bind:Variables.HrdbDepartmentData.dataSet" name="DepartmentGrid1" deleterow="true" updaterow="true" insertrow="true" gridfirstrowselect="true" readonlygrid="false">
                     <wm-grid-column binding="deptid" caption="Deptid" type="integer" primary-key="true" generator="identity" readonly="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
@@ -57,7 +60,7 @@ var _MainPage_Variables_ ={}
                     <wm-grid-column binding="deptcode" caption="Deptcode" type="string" readonly="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
                     <wm-grid-column binding="location" caption="Location" type="string" readonly="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
                     <wm-grid-column binding="tenantid" caption="Tenantid" type="integer" readonly="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                    <wm-grid-action key="addNewRow" label="New" value="new" icon="new" show="true" class="btn-primary" action="addNewRow()"></wm-grid-action>
+                    <wm-grid-action key="addNewRow" label="New" show="true" class="btn-primary" icon="new" action="addNewRow()" type="button"></wm-grid-action>
                 </wm-grid>
                 <wm-liveform formtype="inline" dataset="bind:Variables.HrdbDepartmentData.dataSet" name="DepartmentLiveform1" novalidate="false" title="Details">
                     <wm-layoutgrid name="layoutgrid1">
@@ -117,6 +120,8 @@ var _MainPage_Variables_ ={}
                 </wm-liveform>
             </wm-livegrid>
         </wm-page-content>
+        <wm-right-panel content="rightnav" columnwidth="2" name="right_panel1"></wm-right-panel>
     </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
 </wm-page>
 </script>
