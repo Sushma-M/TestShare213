@@ -1,22 +1,104 @@
 {
-    "goToPage_Main": {
-        "category": "wm.NavigationVariable",
-        "operation": "gotoPage",
-        "pageName": "Main",
-        "_id": "wm-wm.NavigationVariable1389180517517",
-        "name": "goToPage_Main",
-        "owner": "App"
-    },
-    "supportedLocale": {
-        "name": "supportedLocale",
-        "type": "string",
-        "isList": false,
-        "owner": "App",
-        "dataSet": {
-            "en": "English"
-        },
-        "saveInPhonegap": false,
-        "category": "wm.Variable",
-        "_id": "wm-wm.Variable1402640443182"
-    }
+	"goToPage_Main": {
+		"name": "goToPage_Main",
+		"owner": "App",
+		"operation": "gotoPage",
+		"pageName": "Main",
+		"dataBinding": {},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToPage_Main-wm.NavigationVariable1389180517517"
+	},
+	"supportedLocale": {
+		"name": "supportedLocale",
+		"type": "string",
+		"isList": false,
+		"owner": "App",
+		"dataSet": {
+			"en": "English"
+		},
+		"dataBinding": [
+			{
+				"name": "dataSet",
+				"type": "object",
+				"fields": [
+					{
+						"name": "dataValue",
+						"type": "string"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-supportedLocale-wm.Variable1402640443182"
+	},
+	"GoogleapisInvoke": {
+		"type": "googleapis.DirectionsResponse",
+		"isList": false,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": [
+					{
+						"name": "origin",
+						"value": "Toronto",
+						"type": "java.lang.String"
+					},
+					{
+						"name": "destination",
+						"value": "Montreal",
+						"type": "java.lang.String"
+					},
+					{
+						"name": "sensor",
+						"value": "false",
+						"type": "java.lang.String"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "googleapis",
+		"operation": "invoke",
+		"operationType": "get",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"serviceType": "RestService",
+		"category": "wm.ServiceVariable",
+		"isDefault": true,
+		"wmServiceOperationInfo": {
+			"methodType": "get",
+			"name": "invoke",
+			"relativePath": "/googleapis/invoke",
+			"consumes": [
+				"text/xml"
+			],
+			"parameters": [
+				{
+					"name": "sensor",
+					"parameterType": "query"
+				},
+				{
+					"name": "origin",
+					"parameterType": "query"
+				},
+				{
+					"name": "destination",
+					"parameterType": "query"
+				}
+			]
+		},
+		"_id": "wm-GoogleapisInvoke-wm.ServiceVariable-1446104263482",
+		"name": "GoogleapisInvoke"
+	}
 }
